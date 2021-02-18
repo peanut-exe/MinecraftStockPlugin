@@ -1,4 +1,4 @@
-package Basic.Stocks;
+package Basic.Stocks.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;

@@ -1,16 +1,17 @@
 package Basic.Stocks;
 
+import Basic.Stocks.Command.StockCommand;
+import Basic.Stocks.Command.TestCommand;
+import Basic.Stocks.Command.reloadCommand;
+import Basic.Stocks.Evnet.StockGuiEvent;
+import Basic.Stocks.Evnet.Stocks;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class Main extends JavaPlugin implements Listener {
 
-    public static int buymoney = 1500;
+    public static double buymoney = 1500;
     public static double length = (int) (Math.log10(buymoney));
     public static String Stocks;
     public static double time = 0;
@@ -24,6 +25,7 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(new StockGuiEvent(this), this);
         getCommand("stock").setExecutor(new StockCommand());
         getCommand("sre").setExecutor(new reloadCommand());
+        getCommand("test").setExecutor(new TestCommand());
     }
 
     @Override

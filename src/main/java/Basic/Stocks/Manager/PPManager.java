@@ -1,5 +1,6 @@
 package Basic.Stocks.Manager;
 
+import static Basic.Stocks.CheckMoney.PPChecking.mon;
 import static Basic.Stocks.Main.*;
 
 import java.util.Random;
@@ -9,7 +10,7 @@ import java.util.TimerTask;
 public class PPManager {
     static int stock = 0;
     public static String FullStock;
-    static Boolean stock_ture;
+    public static Boolean stock_ture;
     public static void PP() {
         Random r = new Random();
         int Randomstock;
@@ -62,27 +63,15 @@ public class PPManager {
         }
     }
     public static String stocks;
-    static String d;
+    public static String d;
     static String Boolean;
-    public static String buy;
-    static String o;
-    static String z;
-    public static int mon;
-    public static String i;
     public static void PPStock() {
-        d = String.format("%.1f%%%n", (double) stock / (double) buymoney * time);
-        mon = Integer.parseInt(d);
-        o = String.format("%.1f%n", (double) buymoney * (double) mon / 100.0);
+        d = String.format("%.1f%%%n", (double) stock / buymoney * time);
         if (stock_ture == true) {
             Boolean = "↑";
-            z = o;
         } else {
             Boolean = "↓";
-            z = "-" + o;
         }
-        int j = 1500 * Integer.parseInt(DBManager.z);
-        i = Integer.toString(j);
-        buy = i;
         stocks = Boolean + d;
     }
 

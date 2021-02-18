@@ -1,6 +1,6 @@
 package Basic.Stocks.Manager;
 
-import Basic.Stocks.Stocks;
+import Basic.Stocks.CheckMoney.DBChecking;
 
 import java.util.Random;
 
@@ -9,7 +9,7 @@ import static Basic.Stocks.Main.*;
 
 public class DBManager {
     private static int stock1;
-    static Boolean stock_ture;
+    public static Boolean stock_ture;
     public static void DB() {
         Random r = new Random();
         int Randomstock;
@@ -62,27 +62,15 @@ public class DBManager {
         }
     }
     public static String stocks;
-    static String d;
+    public static String d;
     static String Boolean;
-    static String o;
-    static String z;
-    public static int mon;
-    public static String i;
-    public static String buy;
     public static void DBStock() {
-        d = String.format("%.1f%%%n", (double) stock1 / (double) buymoney * time);
-        mon = Integer.parseInt(d);
-        o = String.format("%.1f%n", (double) buymoney * (double) mon / 100.0);
+        d = String.format("%.1f%%%n", (double) stock1 / buymoney * time);
         if (stock_ture == true) {
             Boolean = "↑";
-            z = o;
         } else {
             Boolean = "↓";
-            z = "-" + o;
         }
-        int j = 1500 * Integer.parseInt(DBManager.z);
-        i = Integer.toString(j);
-        buy = i;
         stocks = Boolean + d;
     }
 }

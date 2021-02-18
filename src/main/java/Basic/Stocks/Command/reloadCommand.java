@@ -1,10 +1,14 @@
-package Basic.Stocks;
+package Basic.Stocks.Command;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import static Basic.Stocks.CheckMoney.BEChecking.BECheck;
+import static Basic.Stocks.CheckMoney.DBChecking.DBCheck;
+import static Basic.Stocks.CheckMoney.PPChecking.PPCheck;
 import static Basic.Stocks.Manager.BEManager.*;
 import static Basic.Stocks.Manager.DBManager.*;
 import static Basic.Stocks.Manager.PPManager.*;
@@ -24,7 +28,10 @@ public class reloadCommand implements CommandExecutor {
             DBStock();
             BJEStock();
             SPStock();
-            Bukkit.broadcastMessage("주가 변동");
+            BECheck();
+            PPCheck();
+            DBCheck();
+            Bukkit.broadcastMessage(ChatColor.YELLOW +"주가가 변동되었습니다");
         }
         return false;
     }

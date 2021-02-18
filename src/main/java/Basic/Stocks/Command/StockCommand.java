@@ -1,4 +1,4 @@
-package Basic.Stocks;
+package Basic.Stocks.Command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

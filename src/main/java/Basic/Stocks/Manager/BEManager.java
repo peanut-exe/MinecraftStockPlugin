@@ -1,5 +1,7 @@
 package Basic.Stocks.Manager;
 
+import Basic.Stocks.CheckMoney.BEChecking;
+
 import static Basic.Stocks.Main.*;
 
 import java.util.Random;
@@ -8,7 +10,7 @@ import java.util.TimerTask;
 
 public class BEManager {
     static int stock2 = 0;
-    static Boolean stock_ture;
+    public static Boolean stock_ture;
     public static void BE() {
         Random r = new Random();
         double Randomstock = r.nextInt(200)+1;
@@ -60,27 +62,15 @@ public class BEManager {
         }
     }
     public static String stocks;
-    static String d;
+    public static String d;
     static String Boolean;
-    public static String buy;
-    public static String i;
-    public static int mon;
-    static String o;
-    static String z;
     public static void BJEStock() {
-        d = String.format("%.1f%%%n", (double) stock2 / (double) buymoney * time);
-        mon = Integer.parseInt(d);
-        o = String.format("%.2f%n", (double) buymoney * (double) mon / 100.0);
+        d = String.format("%.1f%%%n", (double) stock2 / buymoney * time);
         if (stock_ture == true) {
             Boolean = "↑";
-            z = o;
         } else {
             Boolean = "↓";
-            z = "-" + o;
         }
-        int j = 1500 * Integer.parseInt(DBManager.z);
-        i = Integer.toString(j);
-        buy = i;
         stocks = Boolean + d;
     }
 }

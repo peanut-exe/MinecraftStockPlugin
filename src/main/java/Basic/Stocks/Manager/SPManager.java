@@ -58,17 +58,14 @@ public class SPManager {
         }
     }
     public static String stocks;
-    static String d;
+    public static String d;
     static String Boolean;
     public static String i;
     public static String buy;
-    public static int mon;
-    static String o;
-    static String z;
+    public static String o;
+    public static String z;
     public static void SPStock() {
-        d = String.format("%.1f%%%n", (double) stock2 / (double) buymoney * time);
-        mon = Integer.parseInt(d);
-        o = String.format("%.1f%n", (double) buymoney * (double) mon / 100.0);
+        d = String.format("%.1f%%%n", (double) stock2 / buymoney * time);
         if (stock_ture == true) {
             Boolean = "↑";
             z = o;
@@ -76,9 +73,6 @@ public class SPManager {
             Boolean = "↓";
             z = "-" + o;
         }
-        int j = 1500 * Integer.parseInt(DBManager.z);
-        i = Integer.toString(j);
-        buy = i;
         stocks = Boolean + d;
     }
 }

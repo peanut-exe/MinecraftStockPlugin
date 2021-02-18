@@ -7,3 +7,5 @@ commands:
     description: ddddd
   sre:
     description: ddddd
+  test:
+    description: ddddd

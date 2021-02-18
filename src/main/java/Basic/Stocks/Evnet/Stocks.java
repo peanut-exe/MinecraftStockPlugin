@@ -1,5 +1,9 @@
-package Basic.Stocks;
+package Basic.Stocks.Evnet;
 
+import Basic.Stocks.CheckMoney.BEChecking;
+import Basic.Stocks.CheckMoney.DBChecking;
+import Basic.Stocks.CheckMoney.PPChecking;
+import Basic.Stocks.Main;
 import Basic.Stocks.Manager.BEManager;
 import Basic.Stocks.Manager.DBManager;
 import Basic.Stocks.Manager.PPManager;
@@ -20,6 +24,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 import java.util.Collections;
+
+import static Basic.Stocks.Main.buymoney;
 
 public class Stocks implements Listener {
 
@@ -47,9 +53,9 @@ public class Stocks implements Listener {
                 case 10:
                     p.closeInventory();
                     Inventory view_inv = Bukkit.createInventory(null, 54, "주가 확인");
-                    is = new ItemStack(Material.COAL);im = is.getItemMeta();im.setDisplayName("두부 운수 현재 구매가 : " + DBManager.i);im.setLore(Arrays.asList("두부 운수의 주가 " + DBManager.stocks + "입니다"));is.setItemMeta(im);
-                    is1 = new ItemStack(Material.COAL);im1 = is1.getItemMeta();im1.setDisplayName("땅콩 식품 현재 구매가 : " + PPManager.i);im1.setLore(Arrays.asList("땅콩 식품의 주가 " + PPManager.stocks + "입니다"));is1.setItemMeta(im1);
-                    is2 = new ItemStack(Material.COAL);im2 = is2.getItemMeta();im2.setDisplayName("백조 전자 현재 구매가 : " + BEManager.i);im2.setLore(Arrays.asList("백조 전자의 주가 " + BEManager.stocks + "입니다"));is2.setItemMeta(im2);
+                    is = new ItemStack(Material.MINECART);im = is.getItemMeta();im.setDisplayName("두부 운수 현재 구매가 : " + DBChecking.buy);im.setLore(Arrays.asList("두부 운수의 주가 " + DBManager.stocks + "입니다"));is.setItemMeta(im);
+                    is1 = new ItemStack(Material.CARROT);im1 = is1.getItemMeta();im1.setDisplayName("땅콩 식품 현재 구매가 : " + PPChecking.buy);im1.setLore(Arrays.asList("땅콩 식품의 주가 " + PPManager.stocks + "입니다"));is1.setItemMeta(im1);
+                    is2 = new ItemStack(Material.REDSTONE);im2 = is2.getItemMeta();im2.setDisplayName("백조 전자 현재 구매가 : " + BEChecking.buy);im2.setLore(Arrays.asList("백조 전자의 주가 " + BEManager.stocks + "입니다"));is2.setItemMeta(im2);
                     //is4 = new ItemStack(Material.COAL);im4 = is2.getItemMeta();im4.setDisplayName("백조 전자");im4.setLore(Arrays.asList("백조 전자의 주가" + BEManager.FullStock + "입니다"));is4.setItemMeta(im4);
                     is5 = new ItemStack(Material.COAL);im5 = is5.getItemMeta();im2.setDisplayName("실버 판테온 현재 구매 : " + SPManager.i);im5.setLore(Arrays.asList("실버 판테온의 주가 " + SPManager.stocks + "입니다"));is5.setItemMeta(im5);
                     //비리온 제과
@@ -74,7 +80,7 @@ public class Stocks implements Listener {
                 case 13:
                     p.closeInventory();
                     Inventory inv = Bukkit.createInventory(null, 54, "주식 구매");
-                    is = new ItemStack(Material.COAL);im = is.getItemMeta();im.setDisplayName("두부 운수");im.setLore(Arrays.asList("두부 운수의 주식을 구매합니다"));is.setItemMeta(im);
+                    is = new ItemStack(Material.MINECART);im = is.getItemMeta();im.setDisplayName("두부 운수");im.setLore(Arrays.asList("두부 운수의 주식을 구매합니다"));is.setItemMeta(im);
                     is1 = new ItemStack(Material.CARROT);im1 = is1.getItemMeta();im1.setDisplayName("땅콩 식품");im1.setLore(Arrays.asList("땅콩 식품의 주식을 구매합니다"));is1.setItemMeta(im1);
                     is2 = new ItemStack(Material.REDSTONE);im2 = is2.getItemMeta();im2.setDisplayName("백조 전자");im2.setLore(Arrays.asList("백조 전자의 주식을 구매합니다"));is2.setItemMeta(im2);
                     is5 = new ItemStack(Material.COAL);im5 = is5.getItemMeta();im2.setDisplayName("실버 판테온");im5.setLore(Arrays.asList("실버 판테온의 주가 " + SPManager.stocks + "입니다"));is5.setItemMeta(im5);
@@ -96,7 +102,7 @@ public class Stocks implements Listener {
                 case 16:
                     p.closeInventory();
                     Inventory inv_sell = Bukkit.createInventory(null, 54, "주식 매각");
-                    is = new ItemStack(Material.COAL);im = is.getItemMeta();im.setDisplayName("두부 운수");im.setLore(Arrays.asList("두부 운송의 주식을 매각합니다"));is.setItemMeta(im);
+                    is = new ItemStack(Material.MINECART);im = is.getItemMeta();im.setDisplayName("두부 운수");im.setLore(Arrays.asList("두부 운송의 주식을 매각합니다"));is.setItemMeta(im);
                     is1 = new ItemStack(Material.CARROT);im1 = is1.getItemMeta();im1.setDisplayName("땅콩 식품");im1.setLore(Arrays.asList("땅콩 식품의 주식을 매각합니다"));is1.setItemMeta(im1);
                     is2 = new ItemStack(Material.REDSTONE);im2 = is2.getItemMeta();im2.setDisplayName("백조 전자");im2.setLore(Arrays.asList("백조 전자의 주식을 매각합니다"));is2.setItemMeta(im2);
                     is3 = new ItemStack(Material.RED_STAINED_GLASS_PANE);im3 = is3.getItemMeta();im3.setDisplayName(" ");im3.setLore(Arrays.asList(" "));is3.setItemMeta(im3);
