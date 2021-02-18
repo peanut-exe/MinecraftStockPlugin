@@ -1,0 +1,9 @@
+name: Stock
+version: 0.0.1
+main: Basic.Stocks.Main
+api-version: 1.15
+commands:
+  stock:
+    description: ddddd
+  sre:
+    description: ddddd
