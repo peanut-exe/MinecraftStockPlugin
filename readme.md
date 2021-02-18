@@ -1,3 +1,3 @@
 this plugin is need BasicServerPlugin
 
-BasicServerPluign link : 
+BasicServerPluign link : https://github.com/bjw300/BasicServerPlugin
